@@ -1,0 +1,9 @@
+allocate_coupon_task:
+  description: >
+    Read merchants.csv and consumers.csv.
+    For each merchant, identify one consumers who bought from that merchant the most times.
+    Allocate coupons using allocate_coupon_tool.
+    The final output must include merchant_id, consumer_id, and coupon_value.
+  expected_output: >
+    List of allocations: A JSON array where each item contains: merchant_id , consumer_id , coupon_value
+  agent: coupon_allocator
