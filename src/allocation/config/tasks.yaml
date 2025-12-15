@@ -1,9 +1,20 @@
 allocate_coupon_task:
   description: >
     Read merchants.csv and consumers.csv.
-    For each merchant, identify one consumers who bought from that merchant the most times.
+    For each merchant:
+    - Identify consumers who have purchased from that merchant.
+    - Rank them by loyalty_level and purchase_frequency.
+    - Select the top consumers (minimum 1, maximum 2).
+    - Allocate coupons to only these selected consumers.
+    - Use higher coupon values for higher ranked consumers.
+    - Never exceed the merchant’s max_coupon_value
     Allocate coupons using allocate_coupon_tool.
-    The final output must include merchant_id, consumer_id, and coupon_value.
+    The final output must include merchant_id, consumer_id, consumer_name , merchant_name and the allocated coupon value in the final output
   expected_output: >
-    List of allocations: A JSON array where each item contains: merchant_id , consumer_id , coupon_value
+    List of allocations: A JSON array with objects containing:
+    - merchant_name
+    - selected consumer_ids
+    - coupon_value given to each consumer
+    - short reason for selection
+
   agent: coupon_allocator

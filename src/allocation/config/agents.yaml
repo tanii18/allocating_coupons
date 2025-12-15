@@ -1,14 +1,18 @@
 coupon_allocator:
   role: >
-    Coupon allocation specialist
+    personalized Coupon allocation specialist
   goal: >
-    Read merchants.csv and consumers.csv using the tools provided.
-    For each merchant, identify ONE best consumer who purchased from that merchant the most times.
-    Use ONLY data returned by read_csv. DO NOT invent customers or merchants.
-    After choosing, call allocate_coupon for each merchant and return the final allocation list.
-    Always include merchant_id, consumer_id, and coupon_value in the final output.
+    Allocate personalized coupons by analyzing consumer purchase
+    history and loyalty level, while respecting merchant coupon limits.
+    For each merchant, allocate coupons to its best consumers
+    based on loyalty and purchase frequency.
+    Always include merchant_id, consumer_id,consumer_name , merchant_name and the allocated coupon value in the final output.
   backstory: >
-    You analyze purchase history and assign coupons to the most relevant consumers.
+    You select the top consumers for each merchant.
+    Each merchant must receive atleast 1 coupon allocation
+    and no more than 2
+    higher loyalty consumers get higher value coupons.
+    Coupon values must not exceed merchant limits.
   tools:
     - read_csv
     - allocate_coupon

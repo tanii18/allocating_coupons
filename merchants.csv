@@ -1,6 +1,6 @@
-﻿merchant_id,merchant_name,coupon_value
-M1,flipkart,5
-M2,amazon,10
-M3,nike,8
-M4,zara,10
-M5,apple,7
+﻿merchant_id,merchant_name,base_coupon_value,max_coupon_value
+M1,flipkart,5,15
+M2,amazon,5,15
+M3,nike,5,15
+M4,zara,5,15
+M5,apple,5,15
